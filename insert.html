@@ -6,13 +6,30 @@
     <title>Insert Element in Array</title>
     <script>
         function insert(){
-
+           let data=[10,30,55,8,101,63]
+           let position=document.getElementById('position').value
+           let element=document.getElementById('element').value
+           element=parseInt(element)
+           if(position<data.length && position>=0){
+           for(let i=data.length-1;i>=position;i--){
+             data[i+1]=data[i]
+             if(i==position)
+             {
+                data[i]=element
+             }
+            
+           }
+           console.log(data)
         }
+        else{
+            alert("Please Enter valid position ")
+        }
+     }
     </script>
 </head>
 <body>
-    <input type="text">
-    <input type="text">
+    <input type="text" id="position" placeholder="Enter Position value">
+    <input type="text" id="element" placeholder="Enter Element">
     <button onclick="insert()">Insert Element</button>
 </body>
 </html>

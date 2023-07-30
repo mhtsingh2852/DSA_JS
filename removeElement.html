@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Element from an array</title>
+    <script>
+        
+        function removeElement(){
+        let data = [20,30,50,80,66,42,98]
+        let position = document.getElementById("position").value
+        position=parseInt(position)
+        if(position>=0 && position<data.length ){
+        for(let i=position; i<data.length-1; i++){
+            data[i]=data[i+1]
+        }
+        data.length = data.length-1
+        console.log(data)
+        }
+        else{
+            alert("Please Enter a valid input")
+        }
+        }
+    </script>
+</head>
+<body>
+    <input type="text"  id="position" >
+    <button onclick="removeElement()">Remove Element</button>
+</body>
+</html>
